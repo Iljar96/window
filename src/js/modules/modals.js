@@ -1,4 +1,4 @@
-const modals = () => {
+const modals = (scroll) => {
 	function bindModal(triggerSelector, modalSelector, closeSelector, display = 'block') {
 		const triggers = document.querySelectorAll(triggerSelector),
 			modal = document.querySelector(modalSelector),
@@ -16,6 +16,7 @@ const modals = () => {
 				modal.style.display = display;
 				document.body.style.overflow = 'hidden';
 				// document.body.classList.add('modal-open'); //Bootstrap
+				document.body.style.marginRight = `${scroll}px`;
 			});
 		});
 
@@ -23,6 +24,7 @@ const modals = () => {
 			modal.style.display = 'none';
 			document.body.style.overflow = '';
 			// document.body.classList.remove('modal-open');
+			document.body.style.marginRight = '';
 		});
 
 		modal.addEventListener('click', (e) => {
@@ -30,6 +32,7 @@ const modals = () => {
 				modal.style.display = 'none';
 				document.body.style.overflow = '';
 				// document.body.classList.remove('modal-open');
+				document.body.style.marginRight = '';
 			}
 		});
 	}
