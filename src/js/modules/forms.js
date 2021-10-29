@@ -45,7 +45,7 @@ const forms = (state) => {
 				}
 			}
 
-			postData('assets/server.php', formData)
+			postData('assets/mail.php', formData)
 				.then(res => {
 					console.log(res);
 					statusMessage.textContent = message.success;
