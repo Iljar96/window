@@ -1,4 +1,6 @@
-const forms = () => {
+import checkNumInputs from './checkNumInputs';
+
+const forms = (state) => {
 	const form = document.querySelectorAll('form'),
 		inputs = document.querySelectorAll('input');
 
@@ -15,8 +17,10 @@ const forms = () => {
 			body: data,
 		});
 
-		return await res.text;
+		return await res.text();
 	};
+
+	checkNumInputs('input[name="user_phone"]');
 
 	const clearInputs = () => {
 		inputs.forEach(input => input.value = '');
@@ -31,6 +35,15 @@ const forms = () => {
 			item.appendChild(statusMessage);
 
 			const formData = new FormData(item);
+
+			if (item.getAttribute('data-calc') === 'end') {
+				for (const key in state) {
+					if (Object.hasOwnProperty.call(state, key)) {
+						formData.append(key, state[key]);
+
+					}
+				}
+			}
 
 			postData('assets/server.php', formData)
 				.then(res => {

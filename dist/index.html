@@ -749,15 +749,15 @@
 							</div>
 							<div class="numbers1">
 								<div><span id="hours">18</span></div>
-								<div class="description1">Часов</div>
+								<div class="description2">Часов</div>
 							</div>
 							<div class="numbers1">
 								<div><span id="minutes">33</span></div>
-								<div class="description1">Минут</div>
+								<div class="description3">Минут</div>
 							</div>
 							<div class="numbers1">
 								<div><span id="seconds">44</span></div>
-								<div class="description1">Секунд</div>
+								<div class="description4">Секунд</div>
 							</div>
 						</div>
 					</div>
@@ -878,7 +878,7 @@
 	</div>
 
 	<!-- Calculator -->
-	<div class="popup_calc">
+	<div class="popup_calc" data-modal>
 		<div class="popup_dialog">
 			<div class="popup_calc_content text-center">
 				<button type="button" class="popup_calc_close"><strong>&times;</strong></button>
@@ -905,12 +905,12 @@
 				<div class="multiplication"><strong>&times;</strong></div>
 				<input class="form-control" id="height" type="text" placeholder="Высота" required>
 				<label for="height">мм</label>
-				<button class="button popup_calc_button">Далее</button>
+				<button class="button popup_calc_button" disabled>Далее</button>
 			</div>
 		</div>
 	</div>
 
-	<div class="popup_calc_profile">
+	<div class="popup_calc_profile" data-modal>
 		<div class="popup_dialog">
 			<div class="popup_calc_profile_content text-center">
 				<button type="button" class="popup_calc_profile_close"><strong>&times;</strong></button>
@@ -925,18 +925,18 @@
 				</select>
 				<img src="assets/img/modal_calc/icon_cold.png" alt="">
 				<label>
-					<input class="checkbox" type="checkbox" name="checkbox-test">
+					<input class="checkbox" type="radio" name="checkbox-test" value="cold">
 					<span class="checkbox-custom" id="cold"></span>
 					<span class="label">Холодное</span>
 				</label>
 				<img src="assets/img/modal_calc/icon_warm.png" alt="">
 				<label>
-					<input class="checkbox" type="checkbox" name="checkbox-test">
+					<input class="checkbox" type="radio" name="checkbox-test" value="warm">
 					<span class="checkbox-custom" id="warm"></span>
 					<span class="label">Теплое</span>
 				</label>
 
-				<button class="button popup_calc_profile_button">Далее</button>
+				<button class="button popup_calc_profile_button" disabled>Далее</button>
 			</div>
 		</div>
 	</div>
@@ -946,7 +946,7 @@
 			<div class="popup_content text-center">
 				<button type="button" class="popup_calc_end_close"><strong>&times;</strong></button>
 				<div class="popup_form">
-					<form class="form" action="#">
+					<form class="form" action="#" data-calc="end">
 						<h2>Спасибо за обращение! <br>Оставьте свои данные</h2>
 						<input class="form-control form_input" name="user_name" required type="text" placeholder="Введите ваше имя">
 						<input class="form-control form_input" name="user_phone" required type="text" placeholder="Введите телефон">
